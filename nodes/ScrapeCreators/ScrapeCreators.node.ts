@@ -30,7 +30,7 @@ export class ScrapeCreators implements INodeType {
 		outputs: ['main'] as NodeConnectionType[],
 		credentials: [
 			{
-				name: 'ScrapeCreatorsApi',
+				name: 'scrapeCreatorsApi',
 				required: true,
 			},
 		],

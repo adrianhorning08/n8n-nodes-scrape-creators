@@ -3,7 +3,8 @@
 	"version": "0.1.0",
 	"description": "Scrape Creators Node for n8n. Get real time social media data.",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"social-media"
 	],
 	"license": "MIT",
 	"homepage": "https://n8n.io",
