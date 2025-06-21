@@ -42,6 +42,7 @@ To use this node, you will need to authenticate with the Scrape Creators API.
 - [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
 - [Scrape Creators Documentation](https://docs.scrapecreators.com/)
 - [Sign up for a Scrape Creators API key](https://app.scrapecreators.com/)
+- Email me if you have any problems: adrian@thewebscrapingguy.com
 
 ## Version history
 
