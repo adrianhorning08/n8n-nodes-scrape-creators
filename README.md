@@ -7,9 +7,6 @@ This is an n8n community node. It lets you get real time social media data with 
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-[Installation](#installation)  
-[Version history](#version-history)
-
 ## How to install
 
 ### Community Nodes
@@ -22,7 +19,23 @@ For n8n version 0.187 and later, you can install this node through the Community
 4. Agree to the [risks](https://docs.n8n.io/integrations/community-nodes/risks/) of using community nodes
 5. Select **Install**
 
-### Credentials
+## Credentials
+
+To use this node, you will need to authenticate with the Scrape Creators API.
+
+1. Sign up for a [Scrape Creators account](https://app.scrapecreators.com/)
+2. Copy API Token
+
+3. Create new credential in n8n
+
+   - Use the Scrape Creators node
+   - Under Credential to connect with, click Create New Credential
+   - Paste API Key
+
+## Version history
+
+- **v1.0.1:**
+  - Initial release
 
 ## Resources
 
