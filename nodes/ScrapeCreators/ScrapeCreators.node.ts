@@ -137,7 +137,7 @@ export class ScrapeCreators implements INodeType {
 
 	methods = {
 		credentialTest: {
-			async odooApiTest(
+			async scrapeCreatorsApiTest(
 				this: ICredentialTestFunctions,
 				credential: ICredentialsDecrypted,
 			): Promise<INodeCredentialTestResult> {

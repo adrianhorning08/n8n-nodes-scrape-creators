@@ -41,4 +41,4 @@ To use this node, you will need to authenticate with the Scrape Creators API.
 
 ## Version history
 
-0.1.4 - Initial Release
+0.1.5 - Initial Release
