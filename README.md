@@ -32,11 +32,6 @@ To use this node, you will need to authenticate with the Scrape Creators API.
    - Under Credential to connect with, click Create New Credential
    - Paste API Key
 
-## Version history
-
-- **v1.0.4:**
-  - Initial release
-
 ## Resources
 
 - [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
@@ -46,4 +41,4 @@ To use this node, you will need to authenticate with the Scrape Creators API.
 
 ## Version history
 
-0.1.0 - Initial Release
+0.1.4 - Initial Release
