@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-scrape-creators",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"description": "Scrape Creators Node for n8n. Get real time social media data.",
 	"keywords": [
 		"n8n-community-node-package",
