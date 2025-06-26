@@ -1,12 +1,4 @@
-import {
-	INodeType,
-	INodeTypeDescription,
-	NodeConnectionType,
-	ICredentialTestFunctions,
-	ICredentialsDecrypted,
-	INodeCredentialTestResult,
-	IRequestOptions,
-} from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, NodeConnectionType } from 'n8n-workflow';
 import { instagramOperations } from './InstagramDescription';
 import { tiktokOperations } from './TikTokDescription';
 import { youtubeOperations } from './YouTubeDescription';
