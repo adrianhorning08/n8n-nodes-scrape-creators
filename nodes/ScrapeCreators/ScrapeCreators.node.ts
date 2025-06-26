@@ -40,7 +40,6 @@ export class ScrapeCreators implements INodeType {
 			{
 				name: 'scrapeCreatorsApi',
 				required: true,
-				testedBy: 'scrapeCreatorsApiTest',
 			},
 		],
 		requestDefaults: {
@@ -133,59 +132,5 @@ export class ScrapeCreators implements INodeType {
 			...pinterestOperations,
 			...googleSearchOperations,
 		],
-	};
-
-	methods = {
-		credentialTest: {
-			async scrapeCreatorsApiTest(
-				this: ICredentialTestFunctions,
-				credential: ICredentialsDecrypted,
-			): Promise<INodeCredentialTestResult> {
-				const credentials = credential.data;
-
-				try {
-					if (!credentials) {
-						return {
-							status: 'Error',
-							message: 'Credentials are not provided',
-						};
-					}
-					const options: IRequestOptions = {
-						headers: {
-							'User-Agent': 'n8n',
-							Connection: 'keep-alive',
-							Accept: '*/*',
-							'Content-Type': 'application/json',
-							'X-API-KEY': credentials.apiKey,
-						},
-						method: 'GET',
-						uri: 'https://api.scrapecreators.com/v1/tiktok/profile?handle=therock',
-						json: true,
-					};
-					const result = await this.helpers.request(options);
-					console.log(result);
-					if (result.error || !result.result) {
-						return {
-							status: 'Error',
-							message: 'Credentials are not valid',
-						};
-					} else if (result.error) {
-						return {
-							status: 'Error',
-							message: `Credentials are not valid: ${result.error.data.message}`,
-						};
-					}
-				} catch (error) {
-					return {
-						status: 'Error',
-						message: `Settings are not valid: ${error}`,
-					};
-				}
-				return {
-					status: 'OK',
-					message: 'Authentication successful!',
-				};
-			},
-		},
 	};
 }

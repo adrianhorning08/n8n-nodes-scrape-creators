@@ -1,4 +1,9 @@
-import { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'n8n-workflow';
+import {
+	IAuthenticateGeneric,
+	ICredentialType,
+	INodeProperties,
+	ICredentialTestRequest,
+} from 'n8n-workflow';
 
 export class ScrapeCreatorsApi implements ICredentialType {
 	name = 'scrapeCreatorsApi';
@@ -20,6 +25,19 @@ export class ScrapeCreatorsApi implements ICredentialType {
 		properties: {
 			headers: {
 				'X-API-KEY': '={{$credentials.apiKey}}',
+			},
+		},
+	};
+
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: 'https://api.scrapecreators.com',
+			url: '/v1/tiktok/profile',
+			headers: {
+				'X-API-KEY': '={{ $credentials.apiKey }}',
+			},
+			qs: {
+				handle: 'therock',
 			},
 		},
 	};
