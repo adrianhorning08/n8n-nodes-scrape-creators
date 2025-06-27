@@ -281,7 +281,7 @@ export const tiktokOperations: INodeProperties[] = [
 		// 	minValue: 1,
 		// 	maxValue: 1000,
 		// },
-		default: 20,
+		default: 50,
 		description: 'Max number of results to return',
 		displayOptions: {
 			show: {

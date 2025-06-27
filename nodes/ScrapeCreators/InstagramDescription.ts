@@ -155,7 +155,7 @@ export const instagramOperations: INodeProperties[] = [
 		// 	minValue: 1,
 		// 	maxValue: 60,
 		// },
-		default: 20,
+		default: 50,
 		description: 'Max number of results to return',
 		displayOptions: {
 			show: {

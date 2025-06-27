@@ -86,7 +86,7 @@ export class ScrapeCreators implements INodeType {
 						value: 'reddit',
 					},
 					{
-						name: 'Thread',
+						name: 'Threads',
 						value: 'threads',
 					},
 					{
