@@ -105,7 +105,8 @@ export const linkedinAdLibraryOperations: INodeProperties[] = [
 				displayName: 'Countries',
 				name: 'countries',
 				type: 'string',
-				description: 'Comma-separated list of the 2 letter country codes to search for, for example: US,CA,MX',
+				description:
+					'Comma-separated list of the 2 letter country codes to search for, for example: US,CA,MX',
 				default: '',
 			},
 			{
@@ -133,7 +134,7 @@ export const linkedinAdLibraryOperations: INodeProperties[] = [
 			// minValue: 1,
 			// maxValue: 60,
 		},
-		default: 50,
+		default: 20,
 		description: 'Max number of results to return',
 		displayOptions: {
 			show: {
