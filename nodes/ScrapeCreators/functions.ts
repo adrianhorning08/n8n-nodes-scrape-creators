@@ -19,8 +19,6 @@ export const getCursorPaginator = (
 		this: IExecutePaginationFunctions,
 		requestOptions: DeclarativeRestApiSettings.ResultOptions,
 	): Promise<INodeExecutionData[]> {
-		console.log('holy shit I am here');
-
 		if (!requestOptions.options.qs) {
 			requestOptions.options.qs = {};
 		}
