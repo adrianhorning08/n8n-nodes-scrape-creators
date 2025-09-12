@@ -16,7 +16,7 @@ export const youtubeOperations: INodeProperties[] = [
 			{
 				name: 'Get YouTube Channel Details',
 				value: 'getYouTubeChannelDetails',
-				action: 'Get a you tube channel details',
+				action: 'Get a youtube channel details',
 				description: 'Get a YouTube channel details',
 				routing: {
 					request: {
@@ -32,7 +32,7 @@ export const youtubeOperations: INodeProperties[] = [
 			{
 				name: 'Get YouTube Channel Videos',
 				value: 'getYouTubeChannelVideos',
-				action: 'Get a you tube channel videos',
+				action: 'Get a youtube channel videos',
 				description: 'Get a YouTube channel videos',
 				routing: {
 					request: {
@@ -55,7 +55,7 @@ export const youtubeOperations: INodeProperties[] = [
 			{
 				name: 'Get YouTube Channel Shorts',
 				value: 'getYouTubeChannelShorts',
-				action: 'Get a you tube channel shorts',
+				action: 'Get a youtube channel shorts',
 				description: 'Get a YouTube channel shorts',
 				routing: {
 					request: {
@@ -78,7 +78,7 @@ export const youtubeOperations: INodeProperties[] = [
 			{
 				name: 'Get YouTube Video Details',
 				value: 'getYouTubeVideoDetails',
-				action: 'Get a you tube video details',
+				action: 'Get a youtube video details',
 				description: 'Get a YouTube video details',
 				routing: {
 					request: {
@@ -93,7 +93,7 @@ export const youtubeOperations: INodeProperties[] = [
 			{
 				name: 'Get YouTube Video Transcript',
 				value: 'getYouTubeVideoTranscript',
-				action: 'Get a you tube video transcript',
+				action: 'Get a youtube video transcript',
 				description: 'Get a YouTube video transcript',
 				routing: {
 					request: {
@@ -108,7 +108,7 @@ export const youtubeOperations: INodeProperties[] = [
 			{
 				name: 'Search YouTube Videos by Keyword',
 				value: 'searchYouTubeVideosByKeyword',
-				action: 'Search you tube videos',
+				action: 'Search youtube videos',
 				description: 'Search YouTube videos',
 				routing: {
 					request: {
@@ -129,7 +129,7 @@ export const youtubeOperations: INodeProperties[] = [
 			{
 				name: 'Search YouTube Videos by Hashtag',
 				value: 'searchYouTubeVideosByHashtag',
-				action: 'Search you tube videos by hashtag',
+				action: 'Search youtube videos by hashtag',
 				routing: {
 					request: {
 						method: 'GET',
@@ -149,7 +149,7 @@ export const youtubeOperations: INodeProperties[] = [
 			{
 				name: 'Get Comments',
 				value: 'getComments',
-				action: 'Get comments',
+				action: 'Get youtube video comments',
 				routing: {
 					request: {
 						method: 'GET',

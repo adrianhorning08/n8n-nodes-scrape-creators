@@ -55,6 +55,8 @@ export const getCursorPaginator = (
 					possibleNewCursor = (possibleNewCursor as IDataObject)?.[path];
 				}
 
+				console.log('possibleNewCursor', possibleNewCursor);
+
 				if (possibleNewCursor) {
 					nextCursor = String(possibleNewCursor);
 				}
@@ -65,9 +67,7 @@ export const getCursorPaginator = (
 				const currentData = items[0].json[dataProperty] as IDataObject[];
 				items[0].json[dataProperty] = [...currentData, ...actualResponse[dataProperty]];
 			}
-		} while (limit > count && nextCursor);
-
-		console.log('items', items);
+		} while (limit > count && nextCursor && nextCursor !== 'undefined' && nextCursor !== 'null');
 
 		items[0].json[dataProperty] = (items[0].json[dataProperty] as IDataObject[])?.slice(0, limit);
 
