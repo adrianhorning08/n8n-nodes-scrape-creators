@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.ScrapeCreators",
+	"node": "n8n-nodes-scrape-creators.ScrapeCreators",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Miscellaneous", "Development", "Productivity"],
