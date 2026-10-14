@@ -36,17 +36,24 @@ export const getCursorPaginator = (
 
 		let nextCursor: string | undefined = undefined;
 		const limit = (this.getNodeParameter('limit', true) as number) || 10;
+		// Keep a bad upstream cursor from turning one n8n execution into unbounded requests.
+		const maxPages = 1000;
+		let pageCount = 0;
+		let receivedItems = false;
 
 		// Get the last part of the cursor property path for the query string
 		const queryStringCursorProperty = cursorProperty.split('.').pop() || cursorProperty;
 
 		do {
+			const requestedCursor: string | undefined = nextCursor;
 			requestOptions.options.qs.limit = limit;
 			requestOptions.options.qs[queryStringCursorProperty] = nextCursor;
 			responseData = await this.makeRoutingRequest(requestOptions);
+			pageCount += 1;
 			console.log('responseData', responseData);
 
 			const actualResponse = responseData[responseData.length - 1]?.json as IDataObject;
+			receivedItems = false;
 			if (responseData.length > 0) {
 				// Handle nested cursor property path
 				const cursorPath = cursorProperty.split('.');
@@ -57,17 +64,24 @@ export const getCursorPaginator = (
 
 				console.log('possibleNewCursor', possibleNewCursor);
 
-				if (possibleNewCursor) {
-					nextCursor = String(possibleNewCursor);
-				}
+				const newCursor = possibleNewCursor ? String(possibleNewCursor) : undefined;
+				nextCursor = newCursor && newCursor !== requestedCursor ? newCursor : undefined;
 			}
 
 			if (Array.isArray(actualResponse?.[dataProperty])) {
+				receivedItems = actualResponse[dataProperty].length > 0;
 				count += actualResponse[dataProperty].length;
 				const currentData = items[0].json[dataProperty] as IDataObject[];
 				items[0].json[dataProperty] = [...currentData, ...actualResponse[dataProperty]];
 			}
-		} while (limit > count && nextCursor && nextCursor !== 'undefined' && nextCursor !== 'null');
+		} while (
+			limit > count &&
+			nextCursor &&
+			nextCursor !== 'undefined' &&
+			nextCursor !== 'null' &&
+			receivedItems &&
+			pageCount < maxPages
+		);
 
 		items[0].json[dataProperty] = (items[0].json[dataProperty] as IDataObject[])?.slice(0, limit);
 

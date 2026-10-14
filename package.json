@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-scrape-creators",
-	"version": "0.1.11",
+	"version": "0.1.12",
 	"description": "Scrape Creators Node for n8n. Get real time social media data.",
 	"keywords": [
 		"n8n-community-node-package",
@@ -22,6 +22,7 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "npx rimraf dist && tsc && gulp build:icons",
+		"test": "npm run build && node --test test/*.test.mjs",
 		"dev": "tsc --watch",
 		"format": "prettier nodes credentials --write",
 		"lint": "eslint nodes credentials package.json",
